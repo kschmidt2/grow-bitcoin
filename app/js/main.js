@@ -6,51 +6,40 @@ Highcharts.setOptions({
 
 
 function drawHighcharts() {
-    Highcharts.chart("chart-container-PROJECT-NAME", { // add the proper ID here
+    Highcharts.chart("chart-container-bitcoin", { // add the proper ID here
         chart: {
-            type: 'bar',
+            type: 'line',
             styledMode: true,
             spacingBottom: 25,
             spacingRight: 100,
-            spacingLeft: 0,
+            spacingLeft: 10,
             spacingTop: 20
         }, 
         title: {
             text: null
         },
         data: {
-            googleSpreadsheetKey: '1YOKb5l2VM4aAB2r20N_1aT_1vEajYrP3U-U3A6lZbC0',
-        },
-        // for bar charts only
-        plotOptions: {
-            series: {
-                groupPadding: 0.1
-            } 
+            googleSpreadsheetKey: '1ELILIsvw7WKVnQxcUfp-Bv_cmxbpuZy907pgyL6S2tQ',
         },
         // for line charts only
-        // plotOptions: {
-        //     series: {
-        //         lineWidth: 1,
-        //         // clip: false,
-        //         marker: {
-        //             enabled: false,
-        //             symbol: 'circle',
-        //             fillColor: '#ffffff',
-        //             states: {
-        //                 hover: {
-        //                     fillColor: '#ffffff'
-        //                 }
-        //             }
-        //         }
-        //     }
-        // },
+        plotOptions: {
+            series: {
+                lineWidth: 1,
+                // clip: false,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    fillColor: '#ffffff',
+                    states: {
+                        hover: {
+                            fillColor: '#ffffff'
+                        }
+                    }
+                }
+            }
+        },
         legend: {
-            align: 'right',
-            symbolRadius: 0,
-            verticalAlign: 'top',
-            x: 10,
-            itemMarginTop: -10,
-            // enabled: false
+            enabled: false
         },
         xAxis: {
             labels: {
@@ -75,7 +64,7 @@ function drawHighcharts() {
             // },
             },
             // min: ,
-            // max: ,
+            max: 60000,
             // tickAmount: ,
             // adds commas to thousands
         },
@@ -86,8 +75,8 @@ function drawHighcharts() {
             shadow: false,
             padding: 10,
             // valueSuffix: '',
-            // valuePrefix: '',
-            // valueDecimals: 2,
+            valuePrefix: '$',
+            valueDecimals: 2,
         },
         responsive: {
             rules: [{
